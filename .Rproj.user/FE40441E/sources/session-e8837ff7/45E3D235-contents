@@ -14,3 +14,10 @@ head(rainfall_data)
 
 # Check structure
 str(rainfall_data)
+
+
+# Check for missing values in dataset
+sum(is.na(rainfall_data))
+
+# Check missing values per column
+colSums(is.na(rainfall_data))

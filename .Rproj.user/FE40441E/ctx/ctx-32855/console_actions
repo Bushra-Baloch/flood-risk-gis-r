@@ -1,0 +1,36 @@
+{
+    "type": [
+        2,
+        2,
+        0,
+        1,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        0,
+        1,
+        2
+    ],
+    "data": [
+        "\nR version 4.5.2 (2025-10-31 ucrt) -- \"[Not] Part in a Rumble\"\nCopyright (C) 2025 The R Foundation for Statistical Computing\nPlatform: x86_64-w64-mingw32/x64\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under certain conditions.\nType 'license()' or 'licence()' for distribution details.\n\n  Natural language support but running in an English locale\n\nR is a collaborative project with many contributors.\nType 'contributors()' for more information and\n'citation()' o",
+        "n how to cite R or R packages in publications.\n\nType 'demo()' for some demos, 'help()' for on-line help, or\n'help.start()' for an HTML browser interface to help.\nType 'q()' to quit R.\n\n",
+        "> ",
+        "source(\"C:/Users/HP/OneDrive/Desktop/AI-Prompt-Response-Analysis-Dashboard/flood-risk-gis-r/scripts/rainfall_analysis.R\", echo = TRUE)",
+        "\n> # Flood Risk Project - Step 3: Load Rainfall Data\n> \n> # Install package (only first time)\n> install.packages(\"readr\")\n",
+        "\u001BG2;\u001BH2;WARNING\u001Bh: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:\n\nhttps://cran.rstudio.com/bin/windows/Rtools/\n\u001Bg\u001BG2;\u001BG3;Installing package into ‘C:/Users/HP/AppData/Local/R/win-library/4.5’\n(as ‘lib’ is unspecified)\n\u001Bg\u001Bgtrying URL 'https://cran.rstudio.com/bin/windows/contrib/4.5/readr_2.2.0.zip'\nContent type 'application/zip' length 1206439 bytes (1.2 MB)\ndownloaded 1.2 MB\n\n",
+        "package ‘readr’ successfully unpacked and MD5 sums checked\n\nThe downloaded binary packages are in\n\tC:\\Users\\HP\\AppData\\Local\\Temp\\RtmpWMhj1c\\downloaded_packages\n\n> # Load library\n> library(readr)\n\n> # Load dataset\n> rainfall_data <- read_csv(\"data/raw/rainfall_lahore_2015_2024.csv\")\n\rindexing rainfall_lahore_2015_2024.csv [========] 515.71MB/s, eta:  0s\r                                                                      \r\u001B[1mRows: \u001B[22m\u001B[34m3328\u001B[39m \u001B[1mColumns: \u001B[22m\u001B[34m1\u001B[39m\n\u001B[36m──\u001B[39m \u001B[1m",
+        "Column specification\u001B[22m \u001B[36m──────────────────────────────────────────────\u001B[39m\n\u001B[1mDelimiter:\u001B[22m \",\"\n\u001B[31mchr\u001B[39m (1): -BEGIN HEADER-\n\n\u001B[36mℹ\u001B[39m Use `spec()` to retrieve the full column specification for this data.\n\u001B[36mℹ\u001B[39m Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n> # View first rows\n> head(rainfall_data)\n\u001B[38;5;246m# A tibble: 6 × 1\u001B[39m\n  `-BEGIN HEADER-`    ",
+        "                                                \n  \u001B[3m\u001B[38;5;246m<chr>\u001B[39m\u001B[23m                                                               \n\u001B[38;5;250m1\u001B[39m NASA/POWER Source Native Resolution Daily Data                      \n\u001B[38;5;250m2\u001B[39m Dates (month/day/year): 01/01/2015 through 01/31/2024 in UTC        \n\u001B[38;5;250m3\u001B[39m Location: latitude  31.5608   longitude 74.3503                     \n\u001B[38;5;250m4\u001B[39m elevation from MERRA-2: Average for 0.5 x 0.625 degree lat/lon regi…\n\u001B[38;5;250m5\u001B[39m",
+        " The value for missing source data that cannot be computed or is out…\n\u001B[38;5;250m6\u001B[39m parameter(s):                                                       \n\n> # Check structure\n> str(rainfall_data)\nspc_tbl_ [3,328 × 1] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n $ -BEGIN HEADER-: chr [1:3328] \"NASA/POWER Source Native Resolution Daily Data\" \"Dates (month/day/year): 01/01/2015 through 01/31/2024 in UTC\" \"Location: latitude  31.5608   longitude 74.3503\" \"elevation from MERRA-2: Average for 0.5 x 0.625 degree",
+        " lat/lon region = 209.49 meters\" ...\n - attr(*, \"spec\")=\n  .. cols(\n  ..   `-BEGIN HEADER-` = \u001B[31mcol_character()\u001B[39m\n  .. )\n - attr(*, \"problems\")=<externalptr> \n",
+        "\u001BG2;\u001BH2;Warning messages\u001Bh:\n1: package ‘readr’ was built under R version 4.5.3 \n2: \u001B[38;5;252mOne or more parsing issues, call `problems()` on your data frame for\ndetails, e.g.:\n  dat <- vroom(...)\n  problems(dat)\u001B[39m \n\u001Bg",
+        "> ",
+        "source(\"C:/Users/HP/OneDrive/Desktop/AI-Prompt-Response-Analysis-Dashboard/flood-risk-gis-r/scripts/rainfall_analysis.R\", echo = TRUE)",
+        "\n> # Flood Risk Project - Step 3: Load Rainfall Data\n> \n> # Install package (only first time)\n> install.packages(\"readr\")\n\u001BG3;Restarting R session...\u001Bg"
+    ]
+}
