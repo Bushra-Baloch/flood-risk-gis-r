@@ -56,7 +56,8 @@ install.packages("ggplot2")
 library(ggplot2)
 
 # Create rainfall trend plot
-ggplot(rainfall_data, aes(x = DATE, y = RAINFALL)) +
+ggplot(rainfall_data, aes(x = DATE, y = RAINFALL))source("C:/Users/HP/OneDrive/Desktop/github Repo/flood-risk-gis-r/scripts/rainfall_analysis.R", echo = TRUE)
+ +
   geom_line(color = "blue") +
   labs(title = "Daily Rainfall Trend (Lahore 2015–2024)",
        x = "Date",
