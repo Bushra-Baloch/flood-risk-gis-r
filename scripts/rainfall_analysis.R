@@ -62,3 +62,30 @@ ggplot(rainfall_data, aes(x = DATE, y = RAINFALL)) +
        x = "Date",
        y = "Rainfall (mm)") +
   theme_minimal()
+
+# Load dplyr
+library(dplyr)
+
+# Create monthly rainfall totals
+monthly_rainfall <- rainfall_data %>%
+  mutate(MONTH = format(DATE, "%Y-%m")) %>%
+  group_by(MONTH) %>%
+  summarise(TOTAL_RAINFALL = sum(RAINFALL, na.rm = TRUE))
+
+# View data
+head(monthly_rainfall)
+
+# Load dplyr
+library(dplyr)
+
+# Create Year-Month column
+rainfall_data <- rainfall_data %>%
+  mutate(MONTH = format(DATE, "%Y-%m"))
+
+# Monthly rainfall total
+monthly_rainfall <- rainfall_data %>%
+  group_by(MONTH) %>%
+  summarise(TOTAL_RAINFALL = sum(RAINFALL, na.rm = TRUE))
+
+# View result
+head(monthly_rainfall)
