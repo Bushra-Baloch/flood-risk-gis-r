@@ -1,0 +1,26 @@
+{
+    "id": "61B544F7",
+    "path": "C:/Users/HP/OneDrive/Desktop/flood-risk-gis-r/scripts/rainfall_analysis.R",
+    "project_path": "scripts/rainfall_analysis.R",
+    "type": "r_source",
+    "hash": "4086536897",
+    "contents": "",
+    "dirty": false,
+    "created": 1774355135311.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "63,17",
+        "scrollLine": "51"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1774355550,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1774355550802,
+    "read_only": false,
+    "read_only_alternatives": []
+}
