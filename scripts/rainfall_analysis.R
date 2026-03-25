@@ -89,3 +89,30 @@ monthly_rainfall <- rainfall_data %>%
 
 # View result
 head(monthly_rainfall)
+library(ggplot2)
+
+ggplot(monthly_rainfall, aes(x = as.Date(paste0(MONTH, "-01")), y = TOTAL_RAINFALL)) +
+  geom_line(color = "blue") +
+  labs(title = "Monthly Rainfall Trend (2015–2024)",
+       x = "Month",
+       y = "Total Rainfall (mm)") +
+  theme_minimal()
+source("C:/Users/HP/OneDrive/Desktop/flood-risk-gis-r/scripts/rainfall_analysis.R", echo = TRUE)
+
+extreme_rainfall <- rainfall_data %>%
+  filter(RAINFALL > 50)
+
+head(extreme_rainfall)
+# Step: Extreme Rainfall Detection
+
+library(dplyr)
+
+# Filter heavy rainfall days (> 50 mm)
+extreme_rainfall <- rainfall_data %>%
+  filter(RAINFALL > 50)
+
+# View result
+head(extreme_rainfall)
+
+# Count total extreme days
+nrow(extreme_rainfall)
