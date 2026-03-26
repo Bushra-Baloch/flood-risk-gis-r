@@ -116,3 +116,33 @@ head(extreme_rainfall)
 
 # Count total extreme days
 nrow(extreme_rainfall)
+
+library(dplyr)
+library(lubridate)
+
+# Convert DATE to proper date format
+rainfall_data$DATE <- as.Date(rainfall_data$DATE)
+
+# Create month column
+rainfall_data <- rainfall_data %>%
+  mutate(MONTH = floor_date(DATE, "month"))
+
+# Monthly rainfall sum
+monthly_rainfall <- rainfall_data %>%
+  group_by(MONTH) %>%
+  summarise(TOTAL_RAINFALL = sum(RAINFALL, na.rm = TRUE))
+
+# View result
+head(monthly_rainfall)
+
+
+
+
+library(ggplot2)
+
+ggplot(monthly_rainfall, aes(x = MONTH, y = TOTAL_RAINFALL)) +
+  geom_line(color = "blue") +
+  labs(title = "Monthly Rainfall Trend",
+       x = "Month",
+       y = "Total Rainfall (mm)") +
+  theme_minimal()
