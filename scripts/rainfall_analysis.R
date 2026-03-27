@@ -138,7 +138,7 @@ head(monthly_rainfall)
 
 
 
-library(ggplot2)
+# library(ggplot2)
 
 ggplot(monthly_rainfall, aes(x = MONTH, y = TOTAL_RAINFALL)) +
   geom_line(color = "blue") +
@@ -146,3 +146,35 @@ ggplot(monthly_rainfall, aes(x = MONTH, y = TOTAL_RAINFALL)) +
        x = "Month",
        y = "Total Rainfall (mm)") +
   theme_minimal()
+
+library(dplyr)
+library(lubridate)
+
+# Ensure DATE is correct
+rainfall_data$DATE <- as.Date(rainfall_data$DATE)
+
+# Extract year
+rainfall_data <- rainfall_data %>%
+  mutate(YEAR = year(DATE))
+
+# Filter extreme rainfall
+extreme_rainfall <- rainfall_data %>%
+  filter(RAINFALL > 50)
+
+# Count extreme days per year
+yearly_extreme <- extreme_rainfall %>%
+  group_by(YEAR) %>%
+  summarise(EXTREME_DAYS = n())
+
+# View result
+
+library(ggplot2)
+
+ggplot(yearly_extreme, aes(x = YEAR, y = EXTREME_DAYS)) +
+  geom_line(color = "red") +
+  geom_point() +
+  labs(title = "Yearly Extreme Rainfall Days",
+       x = "Year",
+       y = "Number of Extreme Days") +
+  theme_minimal()
+print(yearly_extreme)
