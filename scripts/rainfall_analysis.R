@@ -177,4 +177,14 @@ ggplot(yearly_extreme, aes(x = YEAR, y = EXTREME_DAYS)) +
        x = "Year",
        y = "Number of Extreme Days") +
   theme_minimal()
+
+
+library(dplyr)
+
+rainfall_data <- rainfall_data %>%
+  mutate(RISK_LEVEL = case_when(
+    RAINFALL <= 20 ~ "Low",
+    RAINFALL > 20 & RAINFALL <= 50 ~ "Medium",
+    RAINFALL > 50 ~ "High"
+  ))
 print(yearly_extreme)
