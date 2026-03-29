@@ -92,3 +92,11 @@ ggplot(rainfall_data, aes(x = RISK_LEVEL, fill = RISK_LEVEL)) +
        x = "Risk Level", y = "Days") +
   theme_minimal()
 
+
+# Create numeric flood risk index
+rainfall_data <- rainfall_data %>%
+  mutate(RISK_INDEX = case_when(
+    RISK_LEVEL == "Low" ~ 1,
+    RISK_LEVEL == "Medium" ~ 2,
+    RISK_LEVEL == "High" ~ 3
+  ))
